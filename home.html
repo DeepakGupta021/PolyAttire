@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>PolyAttire-Multiple Clothing Options for your Poly needs</title>
+    <meta name="description" content="Placeholder for upcoming website!!!">
+    <meta name="author" content="Deepak Gupta">
+
+    <!-- Mobile Specific Metas
+   ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <!-- ======================================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/4e2869d9e3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/home_style.css">
+
+
+    <link rel="shortcut icon" href="images/hanger.png">
+</head>
+
+<body>
+    <!-- <div id="preloader">
+        <div id="status">
+            <img src="images/preloader.gif" height="64" width="64" alt="Loading">
+        </div>
+    </div> -->
+    <!-- Sidebar -->
+    <div class="sidebar" id="mySidebar">
+        <button onclick="w3_open()" class="w3-bar-item w3-large">Close &times;</button>
+        <ul>
+            <li>
+                <a href="#" class="man_btn">Man</a>
+                <ul class="man_show">
+                    <li>
+                        <a href="#" class="man_topwear_btn">Topwear</a>
+                        <ul class="man_topwear_show">
+                            <li><a href="#">T-shirts</a></li>
+                            <li><a href="#">Jackets</a></li>
+                            <li><a href="#">Sweatshirts</a></li>
+                            <li><a href="#">Tanks</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="man_bottomwear_btn">Bottomwear</a>
+                        <ul class="man_bottomwear_show">
+                            <li><a href="#">Track Pants & Joggers</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="woman_btn">Woman</a>
+                <ul class="woman_show">
+                    <li>
+                        <a href="#" class="woman_topwear_btn">Topwear</a>
+                        <ul class="woman_topwear_show">
+                            <li><a href="#">T-shirts</a></li>
+                            <li><a href="#">Dresses & Jumpsuits</a></li>
+                            <li><a href="#">Tops</a></li>
+                            <li><a href="#">Sweaters & Sweatshirts</a></li>
+                            <li><a href="#">Jackets & Blazers</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="woman_bottomwear_btn">Bottomwear</a>
+                        <ul class="woman_bottomwear_show">
+                            <li><a href="#">Shorts & Skirts</a></li>
+                            <li><a href="#">Track Pants & Jeggings</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Offers</a></li>
+        </ul>
+    </div>
+
+    <section id="first">
+
+        <div class="top">
+            <img class="logo" src="images/logo.png" alt="logo">
+            <p><i class="fas fa-phone-alt fa-xs"></i> +91 9716-228-206</p>
+        </div>
+
+        <div class="header_menu">
+            <button onclick="w3_open()"><i class="fas fa-bars fa-lg"></i></button>
+            <nav>
+                <ul class="nav_links">
+                    <li><a href="#"><i class="fas fa-search fa-lg"></i></a></li>
+                    <li><a href="#"><i class="fas fa-user fa-lg"></i></a></li>
+                    <li><a href="#"><i class="far fa-heart fa-lg"></i></a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="slider">
+            <ul id="slideWrap">
+                <li><img src="https://via.placeholder.com/350x180.png?text=img1" alt=""></li>
+                <li><img src="https://via.placeholder.com/350x180.png?text=img2" alt=""></li>
+                <li><img src="https://via.placeholder.com/350x180.png?text=img3" alt=""></li>
+                <li><img src="https://via.placeholder.com/350x180.png?text=img4" alt=""></li>
+                <li><img src="https://via.placeholder.com/350x180.png?text=img5" alt=""></li>
+            </ul>
+            <a id="prev" href="#">&#8810;</a>
+            <a id="next" href="#">&#8811;</a>
+        </div>
+
+
+    </section>
+    <script>
+        $('.man_btn').click(function () {
+            $('.sidebar ul .man_show').toggleClass("show");
+            //alert("this triggered");
+        });
+        $('.man_topwear_btn').click(function () {
+            $('.sidebar ul ul .man_topwear_show').toggleClass("show");
+            //alert("this triggered");
+        });
+        $('.man_bottomwear_btn').click(function () {
+            $('.sidebar ul ul .man_bottomwear_show').toggleClass("show");
+            //alert("this triggered");
+        });
+        $('.woman_btn').click(function () {
+            $('.sidebar ul .woman_show').toggleClass("show");
+        })
+        $('.woman_topwear_btn').click(function () {
+            $('.sidebar ul ul .woman_topwear_show').toggleClass("show");
+        })
+        $('.woman_bottomwear_btn').click(function () {
+            $('.sidebar ul ul .woman_bottomwear_show').toggleClass("show");
+        })
+
+        $(document).ready(function () {
+            $('#slider ul li img').width($(window).width());
+            var button_next_pos=80-$(window).width();
+            console.log(button_next_pos);
+            $('#slider #next').css('right',button_next_pos);
+            $(window).resize(function () {
+                $('#slider ul li img').width($(window).width());
+                button_next_pos=80-$(window).width();
+                $('#slider #next').css('right',button_next_pos);
+                //console.log($(window).width());
+            });
+        });
+
+        function w3_open() {
+            const sidebar = document.getElementById('mySidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+</body>
