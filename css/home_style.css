@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+
+.top {
+    background-color: gray;
+    width: 100%;
+    height: 35px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px 4%;
+    font-style: italic;
+    color: white;
+}
+
+.logo{
+    cursor: pointer;
+    width: 80px;
+    margin-right: auto;
+}
+/* Top Section Completes here*/
+.header_menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 2%;
+}
+
+button{
+    border: none;
+}
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 7px;
+}
+.nav_links li a {
+    color: gray;
+    transition: all 0.3s ease 0s;
+}
+.nav_links li a:hover {
+    color: #0088a9;
+}
+
+/*menu ends here */
+/*siderbar starts here*/
+
+.sidebar{
+    position: fixed;
+    z-index: 100;
+    width: 250px;
+    left:0;
+    background:white;
+    height: 100%;
+    transform: translateX(-100%);
+    transition:  transform 0.4s ease;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+.sidebar ul li {
+    line-height: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.sidebar ul ul{
+    position: static;
+    display: none;
+}
+
+.sidebar ul .man_show.show{
+    display: block;
+}
+.sidebar ul ul .man_topwear_show.show{
+    display: block;
+}
+.sidebar ul ul .man_bottomwear_show.show{
+    display: block;
+}
+.sidebar ul .woman_show.show{
+    display: block;
+}
+
+.sidebar ul ul .woman_topwear_show.show{
+    display: block;
+}
+.sidebar ul ul .woman_bottomwear_show.show{
+    display: block;
+}
+.sidebar ul li a{
+    color: black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+    padding-left: 5px;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    border-left: 3px solid transparent;
+    
+}
+.sidebar ul ul li{
+    line-height: 45px;
+}
+.sidebar ul ul ul li{
+    line-height: 40px;
+}
+.sidebar ul ul li a{
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+.sidebar ul ul ul li a{
+    font-size: 16px;
+    font-weight: lighter;
+    padding-left: 50px;
+    border-bottom: none;
+}
+.sidebar ul li a:hover {
+    color:black;
+    background: lightgray; 
+    border-left-color: #0088a9;
+}
+
+.sidebar button {
+    font-size: 25px;
+    color: white;
+    font-weight: 600;
+    line-height: 65px;
+    background: #1e1e1e;
+    text-align: center;
+    letter-spacing: 1px;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* sidebar ends here */
+/*slider starts here*/
+
+#slider {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#slider ul {
+    
+    list-style: none;
+    height: 100%;
+    width: 10000%;
+    padding: 0;
+    margin: 0;
+    transition: all 750ms ease;
+    left: 0;
+  }
+  #slider ul li {
+    height: 100%;
+  
+    float: left;
+  }
+  #slider ul li img{
+    height: 180px;
+  }
+
+  #slider #prev, #slider #next {
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    top: -65%;
+    border-radius: 50%;
+    font-size: 2rem;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    transform: translateY(-50%);
+    transition: all 150ms ease;
+  }
+  #slider #prev {
+    left: 10px;
+  }
+  #slider #next {
+    right: -300px;
+  }
+  
+  #slider #prev:hover, #slider #next:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    text-shadow: 0;
+  }
